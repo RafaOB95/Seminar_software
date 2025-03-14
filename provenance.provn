@@ -1,0 +1,16 @@
+document
+  entity(rnn_test_nb, [prov:label="Notebook RNN-test-3.ipynb"])
+  entity(requirements, [prov:label="Archivo de dependencias requirements.txt"])
+  entity(trained_model, [prov:label="Modelo RNN entrenado"])
+  activity(train_model, [prov:label="Entrenar el modelo RNN"])
+  activity(evaluate_model, [prov:label="Evaluar el modelo RNN"])
+  agent(User, [prov:type="prov:Person", prov:label="Usuario"])
+  
+  wasGeneratedBy(rnn_test_nb, train_model)
+  wasGeneratedBy(trained_model, train_model)
+  used(train_model, requirements)
+  used(evaluate_model, trained_model)
+  wasAssociatedWith(train_model, User)
+  wasAssociatedWith(evaluate_model, User)
+  wasDerivedFrom(rnn_test_nb, requirements)
+endDocument
